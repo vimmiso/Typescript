@@ -1,0 +1,60 @@
+body{
+    position: relative;
+    display: block;
+    margin-left: 400px;
+}
+
+#name{
+    margin-bottom: 30px;
+}
+
+
+
+#age{
+    margin-bottom: 30px;
+}
+
+
+
+#class{
+    margin-bottom: 30px;
+}
+
+
+#schoolename{
+    margin-bottom: 30px;
+    color: black;
+}
+
+
+#favsubject{
+    margin-bottom: 30px;
+}
+
+
+#submit{
+    margin-top: 30px;
+}
+
+#searchbutton{
+    margin-left: 300px; 
+    margin-top: 60px; 
+    width: 100px; 
+    height: 40px;
+    border-radius: 20px; 
+    background-color: black; 
+    color: #ffffff;
+    
+        
+}
+#searchbutton:hover{
+    
+    background-color: darkgrey;
+    color: black;
+    
+}
+
+input[pattern]:invalid{
+    color:red;
+  }
+
