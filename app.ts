@@ -16,55 +16,47 @@ class Student extends School implements Person{
 var lists:Student[]=[];
 
 function startGame(){
-   
-    // console.log(lists.length);
+  
        const input = <HTMLInputElement>document.getElementById('name');
         const input2 = <HTMLInputElement>document.getElementById('class');
-        const input3 = <HTMLInputElement>document.getElementById('favsubject');
-        const input4 = <HTMLInputElement>document.getElementById('age');
+        const input3 = <HTMLInputElement>document.getElementById('age');
+        const input4 = <HTMLInputElement>document.getElementById('favsubject');
         const input5 = <HTMLInputElement>document.getElementById('schoolName');
         var stud = new Student(input.value,Number(input4.value),input2.value,input3.value,input5.value);
          
 
-        // // const input8 = <HTMLInputElement>document.getElementById('schoolName');
-        let eSchool = input5.value;
-        let eAge = (input4.value).toString();
-        let eClass= input2.value;
-        let eName = input.value;
-        let eFav = input3.value;
-        
-        var regName = new RegExp('[A-Za-z ]+');
-        var regSchool =new RegExp('[A-Za-z ]+');
-        var regAge = new RegExp('[0-9]+');
-        var regClass = new RegExp('[A-Za-z0-9 ]+');
-        var regFav = new RegExp('[A-Za-z ]+');
 
         
-        if( regName.test(eName)===true&& regFav.test(eFav)===true && regSchool.test(eSchool)===true && regAge.test(eAge)===true && regClass.test(eClass)===true){
-            
+            if( input.checkValidity() && input2.checkValidity()  && input3.checkValidity() && input4.checkValidity()  && input5.checkValidity() ){
             lists.push(stud);
             console.log(lists.length);
            console.log(stud);
-        }else{
-            if(regName.test(eName)===false){
-                alert('Please fill the correct Name...');
-            }
-            if (regClass.test(eClass)===false) {
-                alert('Please fill the corrct Class.');
-            }
-             if(regAge.test(eAge)===false){
-                alert('Please fill the correct Age...');
-            }
-            if(regSchool.test(eFav)===false){
-                alert('Please fill the correct Subject Name...');
-    
-            }
-             if(regSchool.test(eSchool)===false){
-                alert('Please fill the correct School Name...');
-    
-            }
+        
+            }else{
+           
+                if( !input.checkValidity() ){
+                    alert('Please fill the correct Name...');
 
-            
+                    
+                }
+                if ( !input2.checkValidity() ) {
+                    alert('Please fill the corrct Class.');
+                    
+                }
+                 if( !input3.checkValidity()){
+                    alert('Please fill the correct Age...');
+                    
+                }
+                if(!input4.checkValidity() ){
+                    alert('Please fill the correct Subject Name...');
+                    
+                }
+                 if( !input5.checkValidity()){
+                    alert('Please fill the correct School Name...');
+                   
+        
+                }
+
         }
     }
         
@@ -92,7 +84,7 @@ document.getElementById('searchbutton')?.addEventListener('click',evt =>{
         const input6 = <HTMLInputElement>document.getElementById('search');
         var regSchool =new RegExp('[A-Za-z ]+');
         if(regSchool.test(input6.value)===false){
-            // alert('School Name is in  Wrong Format.');
+            alert('School Name is in  Wrong Format.');
         }else{
             let output:string ='<h2>List</h2>';
 
@@ -100,10 +92,9 @@ document.getElementById('searchbutton')?.addEventListener('click',evt =>{
             for(let index=0;index<lists.length;index++){
                 const student:Student=lists[index];
             if(input6.value===lists[index].SchoolName){
-                output+='<h4>';
+                output+='<li>';
                 output+=(lists[index]).Name;
-                console.log((lists[index]).Name);
-                output+='</h4>';
+                output+='</li>';
             }
                
             }

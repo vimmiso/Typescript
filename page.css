@@ -37,7 +37,7 @@ body{
 }
 
 #searchbutton{
-    margin-left: 300px; 
+    margin-left: 330px; 
     margin-top: 60px; 
     width: 100px; 
     height: 40px;
@@ -56,5 +56,6 @@ body{
 
 input[pattern]:invalid{
     color:red;
+
   }
 

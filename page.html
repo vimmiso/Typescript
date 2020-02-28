@@ -13,19 +13,34 @@
     <h1 style="margin-left: 280px; position: relative; margin-bottom: 50px;">
         New Student
     </h1><br>
-    <!-- onsubmit="return validateForm()"  -->
+   
     <form action="page.html" name="form" id="form" style="float: left; border-right: 3px solid black; padding-right: 200px; margin-top: 10px;">
+       
+        <div>
+            <label for="name">Name:</label> <br>
+            <input type="text" id="name" pattern="[A-Za-z ]+" required>
+        </div>
         
-        Name: <br>
-        <input type="text" id="name" patter="[A-Za-z ]+" required> <br>
-        Class:<br>
-        <input type="text" id="class" pattern="[A-Za-z0-9 ]+" required> <br>
-        Age:<br>
-        <input type="number" id="age" min="1" max="100" pattern="[0-9]+" required> <br>
-        Favourite Subject:<br>
-        <input type="text" id="favsubject" pattern="[A-Za-z0-9 ]+" required> <br>
-        School Name:<br>
-        <input type="text" id="schoolName" name="schoolName" pattern="[A-Za-z ]+" required> <br>
+        <div>
+            <label for="class">Class:</label><br>
+            <input type="text" id="class" pattern="[A-Za-z0-9 ]+" required>
+        </div>
+
+        <div>   
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" min="1" max="100" pattern="[0-9]+" required>
+        </div>
+
+        <div>
+            <label for="favsubject">Favourite Subject:</label><br>
+            <input type="text" id="favsubject" pattern="[A-Za-z0-9 ]+" required>
+        </div>
+
+        <div>
+            <label for="schoolName">School Name:</label><br>
+            <input type="text" id="schoolName" name="schoolName" pattern="[A-Za-z ]+" required> 
+        </div>
+
         <button type="reset" id="submit" onclick="startGame();">submit</button>
         
     </form>
@@ -34,17 +49,15 @@
 
         <h2 style="display: block; margin-left: 400px; margin-top: 0px; position: absolute; margin-top: 30px; ">
             Search<i style="font-size: 12px;"> (After search list will appear below.)</i></h2>
-        <input type="text" id="search" pattern="[A-Za-z ]+" style="  position: relative;  display: block; margin-left: 400px; margin-top: 0px; position: absolute; margin-top: 60px; width: 250px; height: 40px; font-size: 22px; border: 2px solid black; border-radius: 5px;">
+        <input type="text" id="search" pattern="[A-Za-z ]+" style="padding-left: 20px;  position: relative;  display: block; margin-left: 400px; margin-top: 0px; position: absolute; margin-top: 60px; width: 250px; height: 40px; font-size: 22px; border: 2px solid black; border-radius: 5px;">
         <button id="searchbutton" type="button"   onclick=" updateList();">search</button>
-        <div id="displaylist" style="display: block; visibility: visible;position: relative; margin-left: 320px; padding-left:100px; ">
+        <ol id="displaylist" style="display: block; visibility: visible;position: relative; margin-left: 320px; padding-left:100px; ">
 
-        </div>
+        </ol>
 
     </div>
      <script type="text/javascript" src="myCompiledOutput/app.js"></script> 
-    <!-- <script type="text/javascript" src="js/person.js"></script>
-    <script type="text/javascript" src="js/student.js"></script>
-    <script type="text/javascript" src="js/school.js"></script> --> 
+   
 
 </body>
 </html>
